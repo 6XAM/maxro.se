@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/*Prevent "over-scroll" on iOS and OS X*/
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+/*Custom Theming*/
+body {
+  background-color: #222;
+}
+* {
+  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
+}
