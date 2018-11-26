@@ -11,7 +11,13 @@ body {
 /*Custom Theming*/
 body {
   background-color: #222;
+  padding: 0;
+  margin: 0;
 }
 * {
-  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  font-family: "Source Code Pro", monospace;
+}
+*:focus {
+  outline: none;
 }
