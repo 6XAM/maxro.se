@@ -1,0 +1,22 @@
+<div class="prompt" (click)="onPromptClick()">
+  <label for="realPrompt"></label>
+  <input id="realPrompt"
+         [(ngModel)]="command"
+         (blur)="onPromptBlur()"
+         (keypress)="onKeyPress($event)"
+         autofocus>
+  <div id="fakePrompt">
+    user@maxro.se/local: ~${{
+    promptFocused ?
+      command.substring(0, promptCaretBeginPos)
+      + (isFlash ?
+        command.substring(promptCaretBeginPos, promptCaretEndPos) + '\u2588'
+        :
+        '\u2588'.repeat(promptCaretEndPos - promptCaretBeginPos) + command.charAt(promptCaretEndPos)
+      )
+      + command.substring(promptCaretEndPos + 1)
+      :
+      command + '\u2588'
+    }}
+  </div>
+</div>

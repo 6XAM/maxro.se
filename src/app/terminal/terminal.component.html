@@ -1,0 +1,8 @@
+<div class="terminal-root">
+  <div *ngIf="commands">
+    <ul>
+      <li *ngFor="let command of commands">{{command}}</li>
+    </ul>
+  </div>
+  <app-terminal-prompt></app-terminal-prompt>
+</div>

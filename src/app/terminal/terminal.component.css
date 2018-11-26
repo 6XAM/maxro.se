@@ -1,0 +1,13 @@
+.terminal-root {
+  height: 100%;
+  position: relative;
+  max-width: 80ch;
+}
+.terminal-root > div > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.terminal-root > div > ul > li{
+  min-height: 1.2em;
+}
