@@ -1,8 +1,13 @@
-<div class="terminal-root">
-  <div *ngIf="commands">
+<div #terminalRoot class="terminal-root">
+  <div *ngIf="outputs">
     <ul>
-      <li *ngFor="let command of commands">{{command}}</li>
+      <li *ngFor="let output of outputs">{{output}}</li>
     </ul>
   </div>
-  <app-terminal-prompt></app-terminal-prompt>
+  <div class="terminal-prompt">
+    <div fxLayout="row wrap" *ngIf="isMobile" style="padding: 0 0.5ch; width: 100%; max-height: 10ch; overflow: hidden">
+      <app-terminal-button fxFlex="33%" fxGrow="1" fxShrink="0" *ngFor="let command of quickCommands" [command]="command.cmd" [style]="command.style" [runCommand]="execCommand.bind(this)"></app-terminal-button>
+    </div>
+    <app-terminal-prompt (command)="execCommand($event)" [getCurrentState]="getCurrentState.bind(this)"></app-terminal-prompt>
+  </div>
 </div>

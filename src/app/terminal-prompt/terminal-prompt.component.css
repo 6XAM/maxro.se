@@ -1,11 +1,3 @@
-.prompt {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  overflow-x: hidden;
-  background-color: #222;
-
-}
 #fakePrompt {
   width: 100%;
   min-height: 1.2em;

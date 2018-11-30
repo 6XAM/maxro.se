@@ -1,22 +1,22 @@
-<div class="prompt" (click)="onPromptClick()">
+<div (click)="onPromptClick()">
   <label for="realPrompt"></label>
   <input id="realPrompt"
-         [(ngModel)]="command"
+         [(ngModel)]="commandText"
          (blur)="onPromptBlur()"
-         (keypress)="onKeyPress($event)"
+         (keydown)="onKeyDown($event)"
          autofocus>
   <div id="fakePrompt">
-    user@maxro.se/local: ~${{
+    user@maxro.se/local: {{getCurrentState().currentPath.getPath()}} ${{
     promptFocused ?
-      command.substring(0, promptCaretBeginPos)
+      commandText.substring(0, promptCaretBeginPos)
       + (isFlash ?
-        command.substring(promptCaretBeginPos, promptCaretEndPos) + '\u2588'
+        commandText.substring(promptCaretBeginPos, promptCaretEndPos) + '\u2588'
         :
-        '\u2588'.repeat(promptCaretEndPos - promptCaretBeginPos) + command.charAt(promptCaretEndPos)
+        '\u2588'.repeat(promptCaretEndPos - promptCaretBeginPos) + commandText.charAt(promptCaretEndPos)
       )
-      + command.substring(promptCaretEndPos + 1)
+      + commandText.substring(promptCaretEndPos + 1)
       :
-      command + '\u2588'
+      commandText + '\u2588'
     }}
   </div>
 </div>

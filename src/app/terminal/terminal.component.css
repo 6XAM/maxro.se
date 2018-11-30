@@ -11,3 +11,10 @@
 .terminal-root > div > ul > li{
   min-height: 1.2em;
 }
+.terminal-prompt {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #222;
+}

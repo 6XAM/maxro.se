@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-terminal-button',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TerminalButtonComponent implements OnInit {
 
+  @Input() style;
+  @Input() command: string;
+  @Input() runCommand: (string) => void;
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
