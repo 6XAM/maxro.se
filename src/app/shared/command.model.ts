@@ -203,6 +203,10 @@ export class LSCommand extends BaseCommand {
         ret.push(child.name);
       }
     }
+    if (!ret) {
+      ret.push('ls: No files found.');
+      ret.push('Try \'ls -a\' to see hidden files and directories.');
+    }
     ret.sort();
     this.getCurrentState().outputs = this.getCurrentState().outputs.concat(ret);
     this.getCurrentState().shouldScroll = true;

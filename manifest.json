@@ -1,0 +1,8 @@
+{
+  "short_name": "maxro.se",
+  "name": "maxro.se",
+  "start_url": "/index.html",
+  "background_color": "#222222",
+  "display": "standalone",
+  "theme_color": "#333333"
+}
