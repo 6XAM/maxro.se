@@ -1,3 +1,5 @@
+import {BaseCommand, QuickCommand} from './command.model';
+
 export class Directory {
   name: string;
   parent: Directory;
@@ -51,6 +53,20 @@ export class Directory {
 export class TerminalState {
   fileSystem: Directory;
   currentPath: Directory;
+  shouldScroll = false;
+  quickCommands: QuickCommand[] = [];
+  commands: {[index: string]: BaseCommand} = {};
+  outputs = [
+    'Welcome to maxro.se, the home of all things Maxwell Rosenzweig!',
+    '',
+    'I designed my website to act like a pseudo-terminal. Try typing some of the following commands to see what\'s available:',
+    '',
+    '\u00A0\u00A0\u00A0\u00A0 about',
+    '\u00A0\u00A0\u00A0\u00A0 ls',
+    '\u00A0\u00A0\u00A0\u00A0 cd',
+    '',
+    'If you are on mobile, quick-command buttons are provided above the command prompt.'
+  ];
 
   constructor(fileSystem?: Directory, currentPath?: Directory) {
     this.fileSystem = fileSystem;

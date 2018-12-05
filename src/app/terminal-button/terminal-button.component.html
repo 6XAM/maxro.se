@@ -1,1 +1,1 @@
-<div class="terminal-button" (click)="runCommand(command)" [ngStyle]="style">{{command}}</div>
+<div class="terminal-button" (click)="quickCommand.run()" [ngStyle]="{backgroundColor: quickCommand.color}">{{quickCommand.text}}</div>

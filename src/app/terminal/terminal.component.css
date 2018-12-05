@@ -2,6 +2,7 @@
   height: 100%;
   position: relative;
   max-width: 80ch;
+  overflow-y: auto;
 }
 .terminal-root > div > ul {
   list-style-type: none;

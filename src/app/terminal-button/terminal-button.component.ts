@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {QuickCommand} from '../shared/command.model';
 
 @Component({
   selector: 'app-terminal-button',
@@ -7,9 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TerminalButtonComponent implements OnInit {
 
-  @Input() style;
-  @Input() command: string;
-  @Input() runCommand: (string) => void;
+  @Input() quickCommand: QuickCommand;
 
   constructor() { }
 
