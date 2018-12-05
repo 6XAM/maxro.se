@@ -1,6 +1,5 @@
 .terminal-button {
-  padding: 1ch;
+  padding: 1ch 2ch;
   text-align: center;
   margin: .5ch;
-  height: 100%;
 }
