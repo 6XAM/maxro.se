@@ -118,7 +118,6 @@ export class LSExplicitQuickCommand extends QuickCommand {
 export class AboutCommand extends BaseCommand {
   run(): void {
     const path: string = this.getCurrentState().currentPath.getPath();
-    console.log(path);
     switch (path) {
       case '/':
         this.getCurrentState().outputs = this.getCurrentState().outputs.concat([
@@ -127,6 +126,21 @@ export class AboutCommand extends BaseCommand {
           'In school, my favorite subjects to work with are predicate calculus and data structures/algorithms.',
           '',
           'Hint: for more information on other topics, try \'ls\' and/or \'cd\' before using \'about!\''
+        ]);
+        break;
+      case '/projects/':
+        this.getCurrentState().outputs = this.getCurrentState().outputs.concat([
+          'About: maxro.se/projects/',
+        ]);
+        break;
+      case '/work/':
+        this.getCurrentState().outputs = this.getCurrentState().outputs.concat([
+          'About: maxro.se/work/',
+        ]);
+        break;
+      case '/links/':
+        this.getCurrentState().outputs = this.getCurrentState().outputs.concat([
+          'About: maxro.se/links/',
         ]);
         break;
       default:
@@ -194,9 +208,3 @@ export class LSCommand extends BaseCommand {
     this.getCurrentState().shouldScroll = true;
   }
 }
-
-// export class ManCommand extends Command {
-//   run(params: string[]): string[] {
-//
-//   }
-// }

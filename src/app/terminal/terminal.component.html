@@ -5,9 +5,9 @@
     </ul>
   </div>
   <div class="terminal-prompt">
+    <app-terminal-prompt (command)="execCommand($event)" [getCurrentState]="getCurrentState.bind(this)"></app-terminal-prompt>
     <div fxLayout="row wrap" *ngIf="isMobile" style="padding: 0 0.5ch; width: 100%; max-height: 10ch; overflow: hidden">
       <app-terminal-button fxFlex="1 0 auto" fxfill *ngFor="let command of state.quickCommands" [quickCommand]="command"></app-terminal-button>
     </div>
-    <app-terminal-prompt (command)="execCommand($event)" [getCurrentState]="getCurrentState.bind(this)"></app-terminal-prompt>
   </div>
 </div>

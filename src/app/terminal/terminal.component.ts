@@ -42,7 +42,7 @@ export class TerminalComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
     if (this.state.shouldScroll) {
       this.terminalRootElement.nativeElement.scrollTop = this.terminalRootElement.nativeElement.scrollHeight;
-      this.shouldScroll = false;
+      this.state.shouldScroll = false;
     }
   }
 
